@@ -2,26 +2,16 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
+#define MAIOR(x,y)((x>y)?x:y)
 
-int main() 
-{
-
-    int n, lin = 1, col = 1;
+int main(){
+    int n;
     scanf("%d", &n);
-    if(n == 1){
-        printf("1");
-    }else{
-        for(int i = 0; i < n+(n-1); i++){       //linhas
-            for(int j = 0; j < n+(n-1); j++){   //colunas
-                if(lin == 1 || lin == (n + (n - 1))){
-                    printf("%d ", n);
-                }else{
-                    printf("%d ", n-1);
-                }
-            }
-            lin++;
-            printf("\n");
-        }   
+    for(int i = -n+1; i < n; i++){       //linhas
+        for(int j = -n+1; j < n; j++){   //colunas
+            printf("%d ", 1+MAIOR(abs(i), abs(j)));
+        }
+        printf("\n");
     }
     return 0;
 }

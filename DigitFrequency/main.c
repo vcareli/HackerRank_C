@@ -9,6 +9,7 @@ int main(){
     int seis = 0, sete = 0, oito = 0, nove = 0, zero = 0;
     s = malloc(1024 * sizeof(char));
     scanf("%[^\n]", s);
+    realloc(s, strlen(s)+1);
     for (int i = 0; i < strlen(s); i++){
         if(s[i] == 48){zero++;}
         else if(s[i] == 49){um++;}

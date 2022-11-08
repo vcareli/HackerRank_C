@@ -24,5 +24,7 @@ int main(){
     }
     
     printf("%d %d %d %d %d %d %d %d %d %d", zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove);
+    
+    free(s);
     return 0;
 }

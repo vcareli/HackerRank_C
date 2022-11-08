@@ -16,6 +16,5 @@ int main() {
             printf("\n");
         }
     }
-    free(s);
     return 0;
 }

@@ -12,6 +12,5 @@ int main()
     for(i = num - 1; i >= 0; i--){
         printf("%d ", *(arr + i));
     }
-    free(arr);
     return 0;
 }

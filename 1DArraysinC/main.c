@@ -16,8 +16,6 @@ int main() {
         soma += a;
     }
     
-    printf("%d", soma);    
-    
-    free(arr);
+    printf("%d", soma);
     return 0;
 }

@@ -44,5 +44,6 @@ int main()
 			printf("%d\n", get_volume(boxes[i]));
 		}
 	}
+	free(boxes);
 	return 0;
 }

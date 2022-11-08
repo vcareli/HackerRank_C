@@ -17,5 +17,6 @@ int main() {
     }
     
     printf("%d", soma);
+    free(arr);
     return 0;
 }

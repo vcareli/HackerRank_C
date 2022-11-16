@@ -2,33 +2,42 @@
 #include <stdlib.h>
 #include <math.h>
 
-struct triangle
-{
+struct triangle{
 	int a;
 	int b;
 	int c;
 };
-
 typedef struct triangle triangle;
 
-float area(triangle t){
-    float p = (t.a + t.b + t.c) / 2;
-    float area;
-    area = sqrt(p*(p-t.a)*(p-t.b)*(p-t.c));
-    return area;
-}
-
 void sort_by_area(triangle* tr, int n) {
-    for(int i = 0; i < n; i++){
-        for (int j = i + 1; j < n; j++) {
-            if(area(tr[i]) > area(tr[j])){
-                triangle aux = tr[i];
-                tr[i] = tr[j];
-                tr[j] = aux;
-            }
-        }   
+    int k;
+    double area[n], p, temp[3], temp_area;
+    for(int i = 0;i < n; i++){
+        p = ((tr[i].a) + (tr[i].b) + (tr[i].c))/2.0;
+        area[i] = sqrt(p * (p - tr[i].a) * (p - tr[i].b) * (p - tr[i].c));    
+    }
+    for(int i = 0;i < n; i++){
+        for(int j = i + 1; j < n; j++){
+		if(area[i] > area[j]){
+		    temp[0] = tr[i].a;
+		    temp[1] = tr[i].b;
+		    temp[2] = tr[i].c;
+		    tr[i].a = tr[j].a;
+		    tr[i].b = tr[j].b;
+		    tr[i].c = tr[j].c;
+		    tr[j].a = temp[0];
+		    tr[j].b = temp[1];
+		    tr[j].c = temp[2];
+
+		    temp_area = area[i];
+		    area[i] = area[j];
+		    area[j] = temp_area;
+        	}
+    	}
     }
 }
+
+
 
 int main()
 {
